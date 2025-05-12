@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "image": "/pic/girll.png",
+      "title": "Product 1",
+      "description": "Description 1",
+      "price": 170
+    },
+    {
+      "id": "2",
+      "image": "/pic/girll.png",
+      "title": "Product 2",
+      "description": "Description 2",
+      "price": 130
+    },
+    {
+      "id": "3",
+      "image": "/pic/imagesd.png",
+      "title": "Product 3",
+      "description": "Description 3",
+      "price": 120
+    }
+  ]
+}
