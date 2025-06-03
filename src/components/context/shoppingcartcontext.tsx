@@ -156,7 +156,7 @@
 // export default ShoppingCartContext;
 'use client';
 
-import { createContext, useState, ReactNode, useContext } from 'react';
+import { createContext, useState, ReactNode, useContext, useEffect } from 'react';
 
 // Define the type for each cart item
 type ICartItem = {
@@ -258,7 +258,26 @@ const deleteFromCart = (id: number) => {
   const cartTotalQty = () => {
     return cartItems.reduce((total, item) => total + item.qty, 0);
   };
+
+
+  //loading page every time the user enter the page
+useEffect(() => {
+  const storedCartItems=localStorage.getItem("cartItems")
+  if (storedCartItems) {
+    setCartItems(JSON.parse(storedCartItems))
+  }
+ 
+}, []);
+
+
+ //set
+useEffect(() => {
   
+  localStorage.setItem("cartItems",JSON.stringify(cartItems))
+}, [cartItems]);
+
+
+
 
   return (
     <ShoppingCartContext.Provider value={{ cartItems, setCartItems, handleIncreaseProductQty,getProductsQty ,cartTotalQty,handleDecreaseProductQty,deleteFromCart}}>

@@ -20,6 +20,175 @@
       "title": "Product 3",
       "description": "Description 3",
       "price": 120
+    },
+    {
+      "id": "4",
+      "image": "https://th.bing.com/th/id/R.549e876a7f91663e95975d79b7516974?rik=nx5Fpgea9g6RMQ&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f02%2fnow-i-am-free.jpg&ehk=SsbAH1k3s%2fsYdA90AzEWYXxbMQPtzPRG6B%2b0NB8JduA%3d&risl=&pid=ImgRaw&r=0",
+      "title": "bag",
+      "description": "lklklkhlkhklh",
+      "price": "1000"
+    },
+    {
+      "id": "5",
+      "image": "/pic/girll.png",
+      "title": "jbj",
+      "description": "  n n n ",
+      "price": "1000"
+    },
+    {
+      "id": "6",
+      "image": "",
+      "title": "kids",
+      "description": "",
+      "price": "200"
+    },
+    {
+      "id": "7",
+      "image": "/pic/girll.png",
+      "title": "Product 1",
+      "description": "Description 1",
+      "price": 170
+    },
+    {
+      "id": "8",
+      "image": "/pic/girll.png",
+      "title": "Product 1",
+      "description": "Description 1",
+      "price": 170
+    },
+    {
+      "id": "9",
+      "image": "/pic/girll.png",
+      "title": "Product 1",
+      "description": "Description 1",
+      "price": 170
+    },
+    {
+      "id": "10",
+      "image": "/pic/girll.png",
+      "title": "Product 1",
+      "description": "Description 1",
+      "price": 170
+    },
+    {
+      "id": "f222",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "f453",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "81fc",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "1cf4",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "a893",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "d5a0",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "0b09",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "a197",
+      "image": "",
+      "title": "khk",
+      "description": "",
+      "price": "ojoj"
+    },
+    {
+      "id": "2120",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "d321",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "3e49",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "03ec",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "eeb5",
+      "image": "",
+      "title": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "e707",
+      "image": "",
+      "title": "knkn",
+      "description": "",
+      "price": "knkn"
+    }
+  ],
+  "disscount": [
+    {
+      "id": "2",
+      "code": "FF20",
+      "percentage": 20
+    },
+    {
+      "id": "3",
+      "code": "FF15",
+      "percentage": 15
+    },
+    {
+      "id": "4",
+      "code": "FF10",
+      "percentage": 10
+    },
+    {
+      "id": "5",
+      "code": "FF05",
+      "percentage": 5
     }
   ]
 }
