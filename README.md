@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +33,38 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. -->
+# 🛒 E-Commerce App
+
+A modern and responsive online shop built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
+Includes **user login**, **product filtering**, **pagination**, and an **admin dashboard** for managing the store.
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript  
+- **Styling**: Tailwind CSS  
+- **Backend**: MongoDB  
+- **Authentication**: JWT (via `jose` library)  
+- **Validation**: Zod
+
+---
+
+## ✅ Features
+
+- 🔐 Secure user login using JWT & HttpOnly cookies  
+- 🛍️ Product listing with filters and pagination  
+- 🧑‍💼 Admin dashboard to manage inventory  
+- ⚡ Fast, responsive UI with Tailwind CSS  
+- 🔄 Server-side rendering powered by Next.js
+
+---
+
+## 🚀 Getting Started
+
+Install dependencies and start the dev server:
+
+```bash
+npm install
+npm run dev
