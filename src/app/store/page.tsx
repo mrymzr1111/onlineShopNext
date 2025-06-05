@@ -1,15 +1,15 @@
 
 
 import Container from '@/components/container';
-
+// import { findUserByEmail } from '../../action/auth'
 import React from 'react';
-import ProductItem, { IProductList, IProductProps } from '@/components/productItem';
+import ProductItem, { IProductList } from '@/components/productItem';
 import Link from 'next/link';
 import Pagination from '@/components/pagination ';
 import Search from '@/components/search';
 
   interface IStoreProps{
-      params: Promise <{}>;
+      params: {};
       searchParams : Promise <{
     page:string,
     per_page:string
@@ -20,7 +20,9 @@ import Search from '@/components/search';
 
  async function  Store  ({searchParams}:IStoreProps)  {
   console.log(searchParams);
-  const page=(await searchParams).page??"1"
+  // const page=(await searchParams).page??"1"
+ const page = (await searchParams).page ?? "1";
+
 const per_page=(await searchParams).per_page??"5"
 const title=(await searchParams).title??""
 

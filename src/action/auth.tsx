@@ -3,22 +3,17 @@
 "use server";
 
 import { loginFormSchema } from "@/lib/rules";
+import { findUserByEmail } from "@/lib/db"; // مسیر دقیق بسته به پروژه‌ات
 
 import bcrypt from "bcrypt";
 import { createSession } from "@/lib/server-session";
 
-type LoginState = {
-  errors?: {
-    email?: string[];
-    password?: string[];
-    confirmPassword?: string[];
-  };
-  email?: string;
-};
 
 
 
-export async function login(state:LoginState
+
+
+export async function login(_state:unknown
   
   
   , formData: FormData) {
