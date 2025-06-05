@@ -14,8 +14,8 @@ interface IAddToCartProps{
  }
 function Counter({id}:IAddToCartProps) {
   const {
-    cartItems,
-    setCartItems,
+    // cartItems,
+    // setCartItems,
     handleIncreaseProductQty,
     getProductsQty,
     handleDecreaseProductQty,

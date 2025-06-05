@@ -6,18 +6,21 @@ import Counter from '../../../components/counter'; // Import the Counter compone
 import { IProductProps } from '@/components/productItem';
 
 
-  export interface IResultProps{
+//   export interface IResultProps{
 
-    params:Promise<{id:string}>;
-    searchParams: Promise<>;
+//     params:Promise<{id:string}>;
+//     searchParams: Promise<>;
  
+// }
+export interface IResultProps {
+  params: { id: string };
+  searchParams?: Record<string, string | string[]>;
 }
-
 
 
 async  function Product1({params}:IResultProps) {
 
-const {id}=await params;
+const {id}=  params;
 
     const result=await fetch(`http://localhost:8000/products/${id}`);
         const  data=(await result.json()) as IProductProps ;

@@ -1,7 +1,8 @@
-"use client" ;
+"use client"; 
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useContext } from 'react';
+import React from 'react';
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useShoppingCartContext } from './context/shoppingcartcontext';
 import { CiLogin } from "react-icons/ci";

@@ -7,7 +7,21 @@ import { loginFormSchema } from "@/lib/rules";
 import bcrypt from "bcrypt";
 import { createSession } from "@/lib/server-session";
 
-export async function login(state: any, formData: FormData) {
+type LoginState = {
+  errors?: {
+    email?: string[];
+    password?: string[];
+    confirmPassword?: string[];
+  };
+  email?: string;
+};
+
+
+
+export async function login(state:LoginState
+  
+  
+  , formData: FormData) {
   const validatedFields = loginFormSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
@@ -23,7 +37,7 @@ export async function login(state: any, formData: FormData) {
 
   const { email, password } = validatedFields.data;
 
-  // 🧩 1. پیدا کردن کاربر
+  // پیدا کردن کاربر
   const user = await findUserByEmail(email);
   if (!user) {
     return {
@@ -31,7 +45,7 @@ export async function login(state: any, formData: FormData) {
     };
   }
 
-  // 🧩 2. چک رمز عبور
+  //  چک رمز عبور
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     return {
@@ -39,7 +53,7 @@ export async function login(state: any, formData: FormData) {
     };
   }
 
-  // 🧩 3. ایجاد سشن و کوکی
+  //  ایجاد سشن و کوکی
   await createSession(user._id.toString());
 
   return { success: true };

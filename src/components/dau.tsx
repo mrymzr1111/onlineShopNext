@@ -1,3 +1,3 @@
-function name(params:type) {
-    
-}
+// function name(_params:type) {
+      
+// }

@@ -21,7 +21,7 @@ const Cart = () => {
   const [data, setData] = useState<IProductProps[]>([]);
   const [discountCode, setDiscountCode] = useState("");
 const[finalPrice,setFinalPrice]=useState(0);
-const[discountP,setDiscountP]=useState(0);
+const[_discountP,_setDiscountP]=useState(0);
 
   useEffect(() => {
     // Fetch the product details from the API based on the id
@@ -45,9 +45,9 @@ const[discountP,setDiscountP]=useState(0);
     axios(`http://localhost:8000/disscount?code=${discountCode}`)
       .then((result) => {
         const  data  = result.data as IDiscountData[];  
-        let discountP=totalPrice *data[0].percentage/100 ;
-       let finalPrice=totalPrice-discountP;
-       setDiscountP(discountP);
+        const discountP=totalPrice *data[0].percentage/100 ;
+       const finalPrice=totalPrice-discountP;
+       _setDiscountP(discountP);
        setFinalPrice(finalPrice)
         
         // Here you can handle the discount response (e.g., update the total)
