@@ -9,7 +9,7 @@ import Pagination from '@/components/pagination ';
 import Search from '@/components/search';
 
   interface IStoreProps{
-      params: {};
+      params:Record<string, string>;  
       searchParams : Promise <{
     page:string,
     per_page:string

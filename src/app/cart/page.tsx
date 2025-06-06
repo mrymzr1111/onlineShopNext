@@ -21,7 +21,7 @@ const Cart = () => {
   const [data, setData] = useState<IProductProps[]>([]);
   const [discountCode, setDiscountCode] = useState("");
 const[finalPrice,setFinalPrice]=useState(0);
-const[_discountP,_setDiscountP]=useState(0);
+const[discountP,_setDiscountP]=useState(0);
 
   useEffect(() => {
     // Fetch the product details from the API based on the id
@@ -87,6 +87,7 @@ const[_discountP,_setDiscountP]=useState(0);
         </div>
 
         <div className="flex justify-between mt-6 border-t-2 border-gray-300 pt-6">
+         <p>Discount: ${discountP.toFixed(2)}</p>
           <p>final Price: ${finalPrice}</p>
         </div>
 

@@ -33,6 +33,9 @@ async function getDB(dbName) {
     // const serverInfo = await client.db().admin().serverStatus();
     // console.log("MongoDB Server Info:", serverInfo);
 
+
+
+
     // Return the database instance
     return client.db(dbName);
   } catch (error) {
@@ -65,3 +68,9 @@ process.on('SIGINT', async () => {
   await closeConnection();
   process.exit();
 });
+
+  export async function findUserByEmail(email: string) {
+  const users = await getCollection("users");
+  if (!users) return null;
+  return await users.findOne({ email });
+}

@@ -2,13 +2,11 @@
 
 "use server";
 
-import { loginFormSchema } from "@/lib/rules";
-import { findUserByEmail } from "@/lib/db"; // مسیر دقیق بسته به پروژه‌ات
 
 import bcrypt from "bcrypt";
 import { createSession } from "@/lib/server-session";
-
-
+import { loginFormSchema } from "@/lib/rules";
+import {findUserByEmail} from "../lib/db";
 
 
 
@@ -40,7 +38,7 @@ export async function login(_state:unknown
     };
   }
 
-  //  چک رمز عبور
+  //  checking password
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     return {
@@ -48,7 +46,7 @@ export async function login(_state:unknown
     };
   }
 
-  //  ایجاد سشن و کوکی
+  //  createSession & cookies
   await createSession(user._id.toString());
 
   return { success: true };
