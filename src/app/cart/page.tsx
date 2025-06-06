@@ -21,7 +21,7 @@ const Cart = () => {
   const [data, setData] = useState<IProductProps[]>([]);
   const [discountCode, setDiscountCode] = useState("");
 const[finalPrice,setFinalPrice]=useState(0);
-const[discountP,_setDiscountP]=useState(0);
+const[discountP,setDiscountP]=useState(0);
 
   useEffect(() => {
     // Fetch the product details from the API based on the id
@@ -47,7 +47,7 @@ const[discountP,_setDiscountP]=useState(0);
         const  data  = result.data as IDiscountData[];  
         const discountP=totalPrice *data[0].percentage/100 ;
        const finalPrice=totalPrice-discountP;
-       _setDiscountP(discountP);
+       setDiscountP(discountP);
        setFinalPrice(finalPrice)
         
         // Here you can handle the discount response (e.g., update the total)

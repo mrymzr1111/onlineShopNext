@@ -13,7 +13,7 @@ import { IProductProps } from '@/components/productItem';
  
 // }
 export interface IResultProps {
-  params: { id: string };
+   params: { id: string }; 
   searchParams?: Record<string, string | string[]>;
 }
 
