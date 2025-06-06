@@ -8,6 +8,7 @@ if (!process.env.DB_URI) {
   throw new Error("Mongo URI not found");
 }
 
+
 // Create a new MongoClient instance
 const client = new MongoClient(process.env.DB_URI, {
   serverApi: {
@@ -16,6 +17,10 @@ const client = new MongoClient(process.env.DB_URI, {
     deprecationErrors: true,
   },
 });
+
+
+
+
 
 // Function to connect to the DB and log status
 async function getDB(dbName) {
