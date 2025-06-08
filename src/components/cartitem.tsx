@@ -38,8 +38,10 @@ const Cartitem = ({ id, qty }: ICartItemProps) => {
             alt="product image"
             // src={data.imageUrl || "/pic/girll.png"} 
             src={typeof data.image === 'string' && data.image !== '' ? data.image : "/pic/girll.png"}
-            width={300}
-            height={200}
+            // width={300}
+            // height={200}
+            fill
+           style={{objectFit:'contain'}}
             className="rounded-lg shadow-lg transform  hover:grayscale transition-transform duration-300 ease-in-out"
           />
         </div>

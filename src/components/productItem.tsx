@@ -34,8 +34,8 @@ const ProductItem = ({ image, title, price, description }: IProductProps) => {
   return (
     <div className="shadow-md rounded-md overflow-hidden items-center justify-center">
       {validImage ? (
-        <div className="w-full h-72 flex">
-          <Image src={validImage} alt={title} width={300} height={200} className="object-cover" />
+        <div className="w-full h-72 relative">
+          <Image src={validImage} alt={title} fill  sizes="(max-width: 768px) 100vw, 33vw"  className="object-cover rounded-md" />
         </div>
       ) : (
         <div className="w-full h-72 bg-gray-200 flex items-center justify-center">

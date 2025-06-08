@@ -1,56 +1,22 @@
 
 
 import Image from 'next/image';
-
 import Counter from '../../../components/counter'; // Import the Counter component
 import { IProductProps } from '@/components/productItem';
 
-
-//   export interface IResultProps{
-
-//     params:Promise<{id:string}>;
-//     searchParams: Promise<>;
- 
-// }
-// export interface IResultProps {
-//   //  params: { id: string }; 
-//   // searchParams?: Record<string, string | string[]>;
-
-//   params: { id: string }; 
-//   searchParams?: { [key: string]: string | string[] | undefined };
-// }
 interface IPageProps {
   params: { id: string };
   // searchParams?: { [key: string]: string | string[] | undefined };
    searchParams?: { [key: string]: string | string[] | undefined };
 }
-
-
    export default  async  function Page({params}:IPageProps) {
 //  const resolvedParams = await params;
 // // const {id}=  params;
 // const {id}= resolvedParams;
 const resolvedParams = await params;
 const { id } = resolvedParams;
-
-
     const result=await fetch(`http://localhost:8000/products/${id}`);
         const  data=(await result.json()) as IProductProps ;
-
-
-    // type IProduct1={
-
-    //     id: string,
-    //     image: string,
-    //     title: string,
-    //     description: string,
-    //     price: number,
-    // }
-    // const result=await fetch("http://localhost:8000/products/1");
-    // const  data=(await result.json()) as IProductPropso ;
-    // // console.log(`/pic/${data.image}`);
-
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 px-6 bg-gradient-to-r from-indigo-100 via-indigo-50 to-indigo-100 rounded-xl shadow-2xl">
       {/* Product Image */}
