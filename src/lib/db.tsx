@@ -23,7 +23,7 @@ const client = new MongoClient(process.env.DB_URI, {
 
 
 // Function to connect to the DB and log status
-async function getDB(dbName) {
+async function getDB(dbName:string) {
   console.log("Before MongoDB connection attempt...");
   try {
    
@@ -43,16 +43,26 @@ async function getDB(dbName) {
 
     // Return the database instance
     return client.db(dbName);
-  } catch (error) {
-    // Log errors if any
+  // } catch (error:unknown) {
+  //   // Log errors if any
+  //   console.error("Error connecting to MongoDB:", error.stack || error.message);
+  //   throw error; // Rethrow error for further handling
+  // }
+} catch (error: unknown) {
+  if (error instanceof Error) {
     console.error("Error connecting to MongoDB:", error.stack || error.message);
-    throw error; // Rethrow error for further handling
+  } else {
+    console.error("Unknown error connecting to MongoDB:", error);
   }
+  throw error;
+}
+
+
 }
 
 // Function to get a collection from DB
 
-export async function getCollection(collectionName) {
+export async function getCollection(collectionName:string) {
   console.log("Calling getDB for collection:", collectionName); 
   const db = await getDB("next_blog_db");
   if (db) {

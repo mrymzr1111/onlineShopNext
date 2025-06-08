@@ -3,7 +3,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { login } from "../../action/auth"; // 👈 import from login/actions.ts
+import { login } from "../../action/auth"; 
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -17,7 +17,8 @@ export default function LoginPage() {
       <form action={action} className="space-y-4">
         <div  className="space-y-1"        >
           <label htmlFor="email" className="block text-sm font-medium text-gray-700" >Email</label>
-          <input type="text"   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"      name="email" defaultValue={state?.email} />
+          <input type="text"   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"   defaultValue={state?.email ? String(state.email) : ""}
+ name="email" />
           {state?.errors?.email && (
             <p className="text-sm text-red-600 mt-1" >{state.errors.email}</p>
           )}
@@ -38,13 +39,13 @@ export default function LoginPage() {
           )}
         </div>
 
-        <div className="space-y-1"    >
+        {/* <div className="space-y-1"    >
           <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700" >Confirm Password</label>
           <input type="password" name="confirmPassword"  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           {state?.errors?.confirmPassword && (
-            <p className="text-sm text-red-600 mt-1">{state.errors.confirmPassword}</p>
+            <p className="text-sm text-red-600 mt-1">{state?.errors?.confirmPassword}</p>
           )}
-        </div>
+        </div> */}
 
         <div className="flex justify-between items-center pt-4">
           <button disabled={isPending}   className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50">

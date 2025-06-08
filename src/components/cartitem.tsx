@@ -36,7 +36,8 @@ const Cartitem = ({ id, qty }: ICartItemProps) => {
         <div className="col-span-3">
           <Image
             alt="product image"
-            src={data.imageUrl || "/pic/girll.png"}  // Use dynamic image if available, fallback to default
+            // src={data.imageUrl || "/pic/girll.png"} 
+            src={typeof data.image === 'string' && data.image !== '' ? data.image : "/pic/girll.png"}
             width={300}
             height={200}
             className="rounded-lg shadow-lg transform  hover:grayscale transition-transform duration-300 ease-in-out"
@@ -45,7 +46,7 @@ const Cartitem = ({ id, qty }: ICartItemProps) => {
 
         {/* Product Info */}
         <div className="col-span-9">
-          <h2 className="text-2xl font-semibold text-teal-800 mb-2">{data.name}</h2>
+          <h2 className="text-2xl font-semibold text-teal-800 mb-2">{data.title}</h2>
           <p className="text-sm text-gray-500 mb-2">Quantity: {qty}</p>
           
           {/* Display the price */}

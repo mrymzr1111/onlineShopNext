@@ -6,25 +6,35 @@ import React from 'react';
 import ProductItem, { IProductList } from '@/components/productItem';
 import Link from 'next/link';
 import Pagination from '@/components/pagination ';
+
 import Search from '@/components/search';
 
-  interface IStoreProps{
-    params: Promise<{ id: string }>;
-      searchParams : Promise <{
-    page:string,
-    per_page:string
-    title:string
+  // interface IStoreProps{
+  //   params: Promise<{ id: string }>;
+
+  //     searchParams : Promise <{
+  //   page:string,
+  //   per_page:string
+  //   title:string
     
-      }>;
-    }
+  //     }>;
+  //   }
+  interface IStoreProps {
+  params: { id: string };
+  searchParams?: {
+    page?: string;
+    per_page?: string;
+    title?: string;
+  };
+}
 
  async function  Store  ({searchParams}:IStoreProps)  {
   console.log(searchParams);
   // const page=(await searchParams).page??"1"
- const page = (await searchParams).page ?? "1";
+ const page =  searchParams?.page ?? "1";
 
-const per_page=(await searchParams).per_page??"5"
-const title=(await searchParams).title??""
+const per_page=searchParams?.per_page??"5"
+const title=searchParams?.title??"";
 
   // const data = [
   //   {

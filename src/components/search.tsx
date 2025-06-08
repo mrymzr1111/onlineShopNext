@@ -12,8 +12,9 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All categories');
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
- 
+  // const dropdownRef = useRef(null);
+ const dropdownRef = useRef<HTMLDivElement>(null);
+
 
   const handleSearch = (e: React.FormEvent) => {
     const currentSearchParams=new URLSearchParams(searchParams.toString())

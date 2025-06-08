@@ -12,13 +12,20 @@ import { IProductProps } from '@/components/productItem';
 //     searchParams: Promise<>;
  
 // }
-export interface IResultProps {
-   params: { id: string }; 
-  searchParams?: Record<string, string | string[]>;
+// export interface IResultProps {
+//   //  params: { id: string }; 
+//   // searchParams?: Record<string, string | string[]>;
+
+//   params: { id: string }; 
+//   searchParams?: { [key: string]: string | string[] | undefined };
+// }
+interface IPageProps {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 
-async  function Product1({params}:IResultProps) {
+   export default  async  function Page({params}:IPageProps) {
 
 const {id}=  params;
 
@@ -82,7 +89,7 @@ const {id}=  params;
   );
 }
 
-export default Product1;
+// export default Product1;
 
 
 

@@ -1,16 +1,19 @@
 
-import { SignJWT, jwtVerify } from "jose";
-
+import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 const secretKey = process.env.SESSION_SECRET!;
 const encodedKey = new TextEncoder().encode(secretKey);
 
-export async function encrypt(payload: object) {
-  return new SignJWT(payload)
+export async function encrypt(payload :JWTPayload ) {
+  console.log(payload);
+  return new SignJWT(payload )
+  
+  
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime("7d")
     .sign(encodedKey);
 }
+
 
 export async function decrypt(session: string) {
   try {
@@ -24,4 +27,5 @@ export async function decrypt(session: string) {
   }
 }
 
-    
+
+ 

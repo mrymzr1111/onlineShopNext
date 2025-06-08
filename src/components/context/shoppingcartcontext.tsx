@@ -177,7 +177,7 @@ type ShoppingCartContextType = {
   getProductsQty:(id:number)=>number;
   cartTotalQty:()=>number;
   deleteFromCart:(id:number)=>void
-  handleDecreaseProductQty:(id:number)=>number
+  handleDecreaseProductQty:(id:number)=>void
 };
 
 // Create context with an initial empty shape
