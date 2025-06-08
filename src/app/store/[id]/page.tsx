@@ -21,13 +21,18 @@ import { IProductProps } from '@/components/productItem';
 // }
 interface IPageProps {
   params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  // searchParams?: { [key: string]: string | string[] | undefined };
+   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 
    export default  async  function Page({params}:IPageProps) {
+//  const resolvedParams = await params;
+// // const {id}=  params;
+// const {id}= resolvedParams;
+const resolvedParams = await params;
+const { id } = resolvedParams;
 
-const {id}=  params;
 
     const result=await fetch(`http://localhost:8000/products/${id}`);
         const  data=(await result.json()) as IProductProps ;

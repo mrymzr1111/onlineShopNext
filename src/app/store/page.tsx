@@ -21,20 +21,31 @@ import Search from '@/components/search';
   //   }
   interface IStoreProps {
   params: { id: string };
-  searchParams?: {
+  // searchParams?: {
+  //   page?: string;
+  //   per_page?: string;
+  //   title?: string;
+  // };
+  searchParams: Promise<{
     page?: string;
     per_page?: string;
     title?: string;
-  };
+  }>;
 }
 
  async function  Store  ({searchParams}:IStoreProps)  {
-  console.log(searchParams);
+  // console.log(searchParams);
+    const resolvedSearchParams = await searchParams;
   // const page=(await searchParams).page??"1"
- const page =  searchParams?.page ?? "1";
+//  const page =  searchParams?.page ?? "1";
 
-const per_page=searchParams?.per_page??"5"
-const title=searchParams?.title??"";
+// const per_page=searchParams?.per_page??"5"
+// const title=searchParams?.title??"";
+
+const page =resolvedSearchParams ?.page || '1';          // اگر undefined بود، مقدار پیش‌فرض
+  const title = resolvedSearchParams?.title || '';         // همینطور
+ const per_page=resolvedSearchParams?.per_page||"5"
+
 
   // const data = [
   //   {
