@@ -63,7 +63,8 @@ const[discountP,setDiscountP]=useState(0);
         <h1 className="text-3xl font-extrabold text-center text-teal-700 mb-6">Your Cart</h1>
         
         {cartItems.map((item) => (
-          <Cartitem key={item.id} {...item} />
+          // <Cartitem key={item.id} {...item} />
+        <Cartitem key={item.id} id={Number(item.id)} qty={item.qty} />
         ))}
         
         {/* Total Section */}
