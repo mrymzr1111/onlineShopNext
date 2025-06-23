@@ -8,7 +8,7 @@ import {  ShoppingCartProvider } from '../components/context/shoppingcartcontext
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin"]
 });
 
 const geistMono = Geist_Mono({

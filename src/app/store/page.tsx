@@ -3,11 +3,12 @@
 import Container from '@/components/container';
 // import { findUserByEmail } from '../../action/auth'
 import React from 'react';
-import ProductItem, { IProductList } from '@/components/productItem';
+import ProductItem, { IProductList, IProductProps } from '@/components/productItem';
 import Link from 'next/link';
 import Pagination from '@/components/pagination ';
 
 import Search from '@/components/search';
+import Counter from '@/components/counter';
 
   // interface IStoreProps{
   //   params: Promise<{ id: string }>;
@@ -68,7 +69,7 @@ import Search from '@/components/search';
 // export default Store;
 
 interface IStoreProps {
-  // حذف params چون صفحه اصلی store نیازی به این پارامتر ندارد
+
   searchParams?: Promise<{
     page?: string;
     per_page?: string;
@@ -92,7 +93,7 @@ export default async function Store({ searchParams }: IStoreProps) {
 
   return (
     <Container>
-      <h1 className="text-2xl font-bold mb-4">Store</h1>
+      <h1 className="text-1xl  text-gray-300 font-bold mb-4">Product List</h1>
       <Search />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {data.data.map((item) => (
@@ -105,3 +106,6 @@ export default async function Store({ searchParams }: IStoreProps) {
     </Container>
   );
 }
+
+
+

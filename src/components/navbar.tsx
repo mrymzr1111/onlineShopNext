@@ -17,12 +17,12 @@ const Navbar = () => {
         },
         {
         href:'/store',
-      title:  "store"
+      title:  "Shop"
         }
         ,
         {
           href:"/dashboard",
-      title:  "Dashbord"
+      title:  "Dashboard"
         }
         
        

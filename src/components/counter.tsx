@@ -33,7 +33,7 @@ function Counter({id}:IAddToCartProps) {
   return (
     <div className="flex items-center justify-center md:justify-start mt-4 space-x-3">
       {/* Product ID */}
-      <main className="text-xs text-gray-500">Product ID: {params.id}</main>
+      {/* <main className="text-xs text-gray-500">Product ID: {params.id}</main> */}
 
       {/* Decrease Button */}
       <button
@@ -60,7 +60,7 @@ function Counter({id}:IAddToCartProps) {
 
 <button
   onClick={() => deleteFromCart((id))}
-  className="bg-red-500 hover:bg-red-600 text-white w-11 h-11 rounded-full shadow-lg transition-transform transform hover:scale-110 hover:rotate-6 flex items-center justify-center border border-red-700"
+  className="bg-rose-500 hover:bg-red-600 text-white w-11 h-11 rounded-full shadow-lg transition-transform transform hover:scale-110 hover:rotate-6 flex items-center justify-center border border-red-700"
   title="حذف از سبد خرید"
 >
   <HiOutlineTrash className="w-6 h-6" />

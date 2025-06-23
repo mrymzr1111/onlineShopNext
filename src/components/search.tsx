@@ -50,11 +50,11 @@ const Search = () => {
         <button
           type="button"
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="shrink-0  z-10 inline-flex items-center h-11 px-4 text-sm font-medium text-gray-800 bg-gray-100 border border-gray-300 rounded-s-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
+          className="shrink-0  z-10 inline-flex items-center h-10.5 px-4 text-sm font-medium text-gray-800 bg-gray-100 border border-gray-300 rounded-s-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
         >
           {selectedCategory}
           <svg
-            className="w-3 h-4 ml-2 "
+            className="w-3 h-10 ml-2 "
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -91,14 +91,14 @@ const Search = () => {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search products..."
             required
-            className="block w-full p-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-e-md focus:ring-gray-500 focus:border-gray-500 outline-none"
+            className="block w-full p-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-e-md focus:ring-gray-500 focus:border-gray-500 outline-none "
           />
           <button
             type="submit"
-            className="absolute px-4  py-3   top-0   flex-1         right-0 p-2.5 text-sm font-medium text-white bg-gray-700 rounded-e-md hover:bg-gray-800 focus:ring-2 focus:outline-none focus:ring-gray-500"
+            className="absolute px-4  py-3   top-0   flex-1 right-0 p-2.5 text-sm font-medium text-white bg-gray-700 rounded-e-md hover:bg-gray-800 focus:ring-2 focus:outline-none focus:ring-gray-500"
           >
             <svg
-              className="w-4 h-4 "
+              className="w-3 h-4.5 "
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

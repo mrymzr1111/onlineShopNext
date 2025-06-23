@@ -2,70 +2,70 @@
   "products": [
     {
       "id": "1",
-      "image": "/pic/girll.png",
+      "image": "/pictures/dress.png",
       "title": "Product 1",
-      "description": "Description 1",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": 170
     },
     {
       "id": "2",
-      "image": "/pic/girll.png",
+      "image": "/pictures/sd.png",
       "title": "Product 2",
-      "description": "Description 2",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": 130
     },
     {
       "id": "3",
-      "image": "/pic/imagesd.png",
+      "image": "/pictures/ad.png",
       "title": "Product 3",
-      "description": "Description 3",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": 120
     },
     {
       "id": "4",
-      "image": "https://th.bing.com/th/id/R.549e876a7f91663e95975d79b7516974?rik=nx5Fpgea9g6RMQ&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f02%2fnow-i-am-free.jpg&ehk=SsbAH1k3s%2fsYdA90AzEWYXxbMQPtzPRG6B%2b0NB8JduA%3d&risl=&pid=ImgRaw&r=0",
+      "image": "/pictures/ms.png",
       "title": "bag",
-      "description": "lklklkhlkhklh",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": "1000"
     },
     {
       "id": "5",
-      "image": "/pic/girll.png",
-      "title": "jbj",
-      "description": "  n n n ",
+      "image": "/pictures/yy.png",
+      "title": "Slim Fit Linen Shirt",
+      "description": " Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": "1000"
     },
     {
       "id": "6",
       "image": "",
-      "title": "kids",
-      "description": "",
+      "title": "Women's Classic Denim Jacket",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": "200"
     },
     {
       "id": "7",
-      "image": "/pic/girll.png",
-      "title": "Product 1",
-      "description": "Description 1",
+      "image": "pictures/dress.png",
+      "title": "Unisex Oversized ",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": 170
     },
     {
       "id": "8",
-      "image": "/pic/girll.png",
-      "title": "Product 1",
-      "description": "Description 1",
+      "image": "/pictures/sd.png",
+      "title": "Classic Leather Backpack",
+      "description": "Elegant and breezy summer dress with floral prints — perfect for day outings or casual evenings",
       "price": 170
     },
     {
       "id": "9",
-      "image": "/pic/girll.png",
+      "image": "/pictures/ad.png",
       "title": "Product 1",
       "description": "Description 1",
       "price": 170
     },
     {
       "id": "10",
-      "image": "/pic/girll.png",
+      "image": "/pictures/ad.png",
       "title": "Product 1",
       "description": "Description 1",
       "price": 170
