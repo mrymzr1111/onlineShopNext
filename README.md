@@ -45,7 +45,7 @@ Includes **user login**, **product filtering**, **pagination**, and an **admin d
 
 - **Frontend**: Next.js, React, TypeScript  
 - **Styling**: Tailwind CSS  
-- **Backend**: MongoDB  
+- **Backend**: MongoDB (for authentication)
 - **Authentication**: JWT (via `jose` library)  
 - **Validation**: Zod
 
@@ -61,10 +61,18 @@ Includes **user login**, **product filtering**, **pagination**, and an **admin d
 
 ---
 
-## 🚀 Getting Started
+## 🚀 project structure 
 
-Install dependencies and start the dev server:
+NOTE:
+MongoDB is used for the login/authentication part.
+For the shopping cart and product data ,a local JSON file is used and served via json-server during development 
 
-```bash
-npm install
-npm run dev
+---
+
+## 🚀 RUN THE PROJECT API SERVER 
+npx json-server --watch src/database/data.json --port 8000
+
+## 🚀 PROJECT STATUS: IN PROGRESS
+additional features and improvment are planned...
+
+
