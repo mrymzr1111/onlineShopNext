@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Counter from '../../../components/counter';
-import { IProductProps } from '@/components/productItem';
+// import { IProductProps } from '@/components/productItem';
 
 
 // interface IPageProps {
@@ -82,7 +82,7 @@ export default async function Page({
   const res = await fetch(`http://localhost:8000/products/${id}`);
 //   const data: IProductProps = await res.json();
 //   const data = await res.json();
- const data = (await res.json()) as IProductProps;
+ const data = (await res.json()) ;
   return (
    
 // <div className="flex items-center justify-center p-4       ">

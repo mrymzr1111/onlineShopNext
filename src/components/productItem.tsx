@@ -161,11 +161,19 @@
 
 // export default ProductItem;
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import  { StaticImageData } from 'next/image';
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import AnimatedImage from './animateep';
 import Container from './container';
+
+export interface IProductList {
+  data: IProductProps[];
+  pages: number;
+}
+
+
+
 
 export interface IProductProps {
   id: string;

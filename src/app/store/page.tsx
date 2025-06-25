@@ -3,12 +3,12 @@
 import Container from '@/components/container';
 // import { findUserByEmail } from '../../action/auth'
 import React from 'react';
-import ProductItem, { IProductList, IProductProps } from '@/components/productItem';
+import ProductItem, {  IProductList } from '@/components/productItem';
 import Link from 'next/link';
 import Pagination from '@/components/pagination ';
 
 import Search from '@/components/search';
-import Counter from '@/components/counter';
+// import Counter from '@/components/counter';
 
   // interface IStoreProps{
   //   params: Promise<{ id: string }>;
@@ -89,7 +89,7 @@ export default async function Store({ searchParams }: IStoreProps) {
     { cache: 'no-store' }
   );
 
-  const data: IProductList = await res.json();
+  const data: IProductList= await res.json();
 
   return (
     <Container>
