@@ -323,5 +323,14 @@ Built with ❤️ by Maryam Zarei
     GitHub: https://github.com/mrymzr1111
 
 ⚠️ Note
+ 
+Admin Fetures :
 
-This project is actively in progress. I’m currently working on integrating the shopping cart section with JSON mock data, while the login, admin dashboard, and CRUD operations for delete/update/view continue to work with MongoDB.
+-product managment : Add, update,and delete products
+-Authentication:Login, logout , and registeration
+-Partial produt display connected to MongoDB
+
+some parts of the app use MongoDB as the database ,while others rely on  mock JSON data.
+
+**IM IN THE PROCESS OF MIGRATING DATA MANAGEMENT TO  MongoDB FOR FULL DATABASE ***
+
