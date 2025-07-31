@@ -151,177 +151,177 @@ GitHub: https://github.com/mrymzr1111
 ./assest/screenshot(22).png -->
 
 🛒 E-Commerce App with Secure Authentication
-A modern online shopping app built with Next.js (App Router), TypeScript, and Tailwind CSS.
-Includes JWT-based user authentication, dynamic product listings with filters & pagination, and an admin dashboard powered by mock data.
 
-✅ Perfect for learning secure login systems, frontend/backend integration, and clean project architecture.
+A modern online shopping app built with Next.js (App Router), TypeScript, and Tailwind CSS. Includes JWT-based user authentication, dynamic product listings with filters & pagination, and an admin dashboard powered by mock data.
+
 
 📦 Features
-🔐 Secure JWT authentication using HttpOnly cookies
+🔐 Authentication
 
-🧾 Product listings with filtering and pagination
+    Secure JWT authentication using HttpOnly cookies
 
-🧑‍💼 Admin dashboard for managing mock inventory
+    User login, logout, and registration with full validation
 
-💨 Responsive UI built with Tailwind CSS
+    Inputs validated on client and server using Zod
 
-⚡ Powered by Next.js App Router and TypeScript
+    Passwords securely hashed with bcrypt
 
-🔐 Authentication Features
-User login, logout, and registration with full validation
+    Sessions handled via JWT stored in HttpOnly cookies
 
-Inputs validated on client and server using Zod
+    Protected routes verify user authentication for secure access
 
-Passwords securely hashed with bcrypt
+🧾 Product Listings
 
-Sessions handled via JWT stored in HttpOnly cookies
+    Product listings with filtering and pagination
 
-Protected routes verify user authentication for secure access
+🧑‍💼 Admin Dashboard
 
-🧠 Authentication Flow
+    Admin dashboard for managing mock inventory
+
+💨 UI & Tech
+
+    Responsive UI built with Tailwind CSS
+
+    Powered by Next.js App Router and TypeScript
+
+🔐 Authentication Flow
+
 This app implements secure session-based JWT authentication:
 
-User submits login/register form
+    User submits login/register form
 
-Input is validated with Zod
+    Input is validated with Zod
 
-Password is hashed using bcrypt
+    Password is hashed using bcrypt
 
-On success:
+    On success:
 
-A JWT is generated using jose
+        A JWT is generated using jose
 
-The token is stored in an HttpOnly cookie
+        The token is stored in an HttpOnly cookie
 
-Protected routes verify the JWT token from cookies
+    Protected routes verify the JWT token from cookies
 
-✅ Secure by design:
+✅ Secure by Design
 
-Token is inaccessible via JavaScript
+    Token is inaccessible via JavaScript
 
-Sessions persist across reloads
+    Sessions persist across reloads
 
-Only authenticated users can access protected pages (like /dashboard)
+    Only authenticated users can access protected pages (like /dashboard)
 
 🗂️ Project Structure
-src/
-├── app/ # App Router pages (login, register, dashboard)
-│ └── api/ # API routes (login, register, session)
-├── action/ # Server actions (e.g., register user)
-├── lib/ # Utilities (session, DB, validation)
-├── database/ # Mock data (products, discounts)
 
-yaml
-Copy
-Edit
+src/
+├── app/                   # App Router pages (login, register, dashboard)
+│   └── api/               # API routes (login, register, session)
+├── action/                # Server actions (e.g., register user)
+├── lib/                   # Utilities (session, DB, validation)
+├── database/              # Mock data (products, discounts)
 
 📁 lib/ Folder Details
-db.ts – Connects to MongoDB using the native driver
 
-session.ts – Handles JWT creation/verification using jose
+    db.ts – Connects to MongoDB using the native driver
 
-rules.ts – Zod schemas for validating email, password, etc.
+    session.ts – Handles JWT creation/verification using jose
+
+    rules.ts – Zod schemas for validating email, password, etc.
 
 🧪 Demo Credentials
+
 Use these to test the login system:
 
-Email: maryamzarei@gmail.com
-Password: P@ssw0rd
+    Email: maryamzarei@gmail.com
 
-yaml
-Copy
-Edit
+    Password: P@ssw0rd
 
-✅ In production:
+✅ In Production
 
-Passwords are securely hashed with bcrypt
+    Passwords are securely hashed with bcrypt
 
-Session tokens are validated server-side using JWT + HttpOnly cookies
+    Session tokens are validated server-side using JWT + HttpOnly cookies
 
 🚀 Getting Started
-1. Clone the repository
-bash
-Copy
-Edit
+
+    Clone the repository
+
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
-2. Install dependencies
-bash
-Copy
-Edit
-npm install
-3. Create environment variables
-Create a .env.local file in the root directory:
 
-ini
-Copy
-Edit
+    Install dependencies
+
+npm install
+
+    Create environment variables
+    Create a .env.local file in the root directory:
+
 MONGODB_URI=your-mongodb-uri
 SESSION_SECRET=your-secret-key
 
-4. Start mock product API
-bash
-Copy
-Edit
+    Start mock product API
+
 npx json-server --watch src/database/db.json --port 8000
-5. Run the development server
-bash
-Copy
-Edit
+
+    Run the development server
+
 npm run dev
+
 🛠 Tech Stack
-Area Tech Used
-Frontend Next.js (App Router), React, TypeScript
-Styling Tailwind CSS
-Auth bcrypt, jose, JWT, HttpOnly cookies
-Validation Zod
-Database MongoDB (native driver)
-Mock API JSON Server (for development only)
-
+Area	Tech Used
+Frontend	Next.js (App Router), React, TypeScript
+Styling	Tailwind CSS
+Auth	bcrypt, jose, JWT, HttpOnly cookies
+Validation	Zod
+Database	MongoDB (native driver)
+Mock API	JSON Server (for development only)
 🔧 Features in Progress
-🛒 Shopping cart & checkout
 
-📧 Email verification and password reset
+    checkout
 
-🔐 Role-based admin access
+    
 
-🎟️ Discount code support (via mock JSON):
 
-json
-Copy
-Edit
+    Discount code support (via mock JSON):
+
 "discount": [
-{ "id": "2", "code": "FF20", "percentage": 20 },
-{ "id": "3", "code": "FF15", "percentage": 15 },
-{ "id": "4", "code": "FF10", "percentage": 10 },
-{ "id": "5", "code": "FF05", "percentage": 5 }
+  { "id": "2", "code": "FF20", "percentage": 20 },
+  { "id": "3", "code": "FF15", "percentage": 15 },
+  { "id": "4", "code": "FF10", "percentage": 10 },
+  { "id": "5", "code": "FF05", "percentage": 5 }
 ]
 
-🧾 Order history for users
+    Order history for users
 
-📸 Screenshots of my project are available in assets folder
+📸 Screenshots
 
-./assest/screenshot(14).png
-./assest/screenshot(15).png
-./assest/screenshot(16).png
-./assest/screenshot(16).png
-./assest/screenshot(17).png
-./assest/screenshot(18).png
-./assest/screenshot(19).png
-./assest/screenshot(20).png
-./assest/screenshot(21).png
-./assest/screenshot(22).png
+Available in the assets folder:
+
+    ./assest/screenshot(14).png
+
+    ./assest/screenshot(15).png
+
+    ./assest/screenshot(16).png
+
+    ./assest/screenshot(17).png
+
+    ./assest/screenshot(18).png
+
+    ./assest/screenshot(19).png
+
+    ./assest/screenshot(20).png
+
+    ./assest/screenshot(21).png
+
+    ./assest/screenshot(22).png
 
 UI walkthrough of login, dashboard, product pages, and more:
-
-Login & Register Dashboard Product List
-
+Login & Register | Dashboard | Product List
 🙋‍♀️ Author
+
 Built with ❤️ by Maryam Zarei
 
-GitHub: https://github.com/mrymzr1111
+    GitHub: https://github.com/mrymzr1111
 
 ⚠️ Note
+
 This project is actively in progress. I’m currently working on integrating the shopping cart section with JSON mock data, while the login, admin dashboard, and CRUD operations for delete/update/view continue to work with MongoDB.
-
-
