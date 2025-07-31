@@ -150,7 +150,7 @@ GitHub: https://github.com/mrymzr1111
 ./assest/screenshot(21).png
 ./assest/screenshot(22).png -->
 
- -Commerce App with Secure Authentication
+🛒 E-Commerce App with Secure Authentication
 A modern online shopping app built with Next.js (App Router), TypeScript, and Tailwind CSS.
 Includes JWT-based user authentication, dynamic product listings with filters & pagination, and an admin dashboard powered by mock data.
 
@@ -279,9 +279,11 @@ Database MongoDB (native driver)
 Mock API JSON Server (for development only)
 
 🔧 Features in Progress
-🛒  checkout
+🛒 Shopping cart & checkout
 
+📧 Email verification and password reset
 
+🔐 Role-based admin access
 
 🎟️ Discount code support (via mock JSON):
 
@@ -321,4 +323,5 @@ GitHub: https://github.com/mrymzr1111
 
 ⚠️ Note
 This project is actively in progress. I’m currently working on integrating the shopping cart section with JSON mock data, while the login, admin dashboard, and CRUD operations for delete/update/view continue to work with MongoDB.
+
 
