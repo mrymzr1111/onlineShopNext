@@ -50,7 +50,7 @@ export default async function Page({ params }: { params: { id: string | Promise<
     <div className="w-full">
 
  
-     <BackButton/>
+     
            <MerchForm  handler={updateMerch} merchandise={merchandise} />
  
 
