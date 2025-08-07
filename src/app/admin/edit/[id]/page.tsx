@@ -1,6 +1,5 @@
 
 
-"use server"
 
 import MerchForm from "@/components/merchForm";
 import { getCollection } from "@/lib/db";
@@ -20,10 +19,11 @@ import BackButton from "@/components/backbutton";
 //   params: Promise<{ id: string }>;
 // };
 
-export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
-
+// export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
+export default async function Page({ params }: { params: { id: string } }) {
+  const {id}  =  await params;
   // if id might be a Promise, await it:
-  const id = typeof params.id === 'string' ? params.id : await params.id;
+  // const id = typeof params.id === 'string' ? params.id : await params.id;
   //connects to the merchandise collection in MongoDB database
   const merchCollection = await getCollection("merchandise");
 

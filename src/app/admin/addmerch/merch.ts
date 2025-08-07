@@ -81,6 +81,64 @@ export async function createMerch(
 
 //update 
 
+// export async function updateMerch(formData: FormData): Promise<merchActionState> {
+//   const user = await getAuthUser();
+//   if (!user) return redirect("/");
+
+//   const raw = {
+//     id: formData.get("id")?.toString() ?? "",
+//     image: formData.get("image")?.toString() ?? "",
+//     title: formData.get("title")?.toString() ?? "",
+//     description: formData.get("description")?.toString() ?? "",
+//     price: formData.get("price")?.toString() ?? "",
+//   };
+
+//   const validated = merchSchema.safeParse(raw);
+
+//   if (!validated.success) {
+//     return {
+//       errors: validated.error.flatten().fieldErrors,
+//       success: false,
+//     };
+//   }
+
+//   const data = validated.data;
+
+//   const merchCollection = await getCollection("merchandise");
+
+//   if (!merchCollection || !raw.id || raw.id.length !== 24) {
+//     return {
+//       errors: { id: ["Invalid ID"] },
+//       success: false,
+//     };
+//   }
+//   //check the user owns the 
+
+
+//   await merchCollection.updateOne(
+//     { _id: new ObjectId(raw.id) },
+//     {
+//       $set: {
+//         image: data.image,
+//         title: data.title,
+//         description: data.description,
+//         price: Number(data.price),
+//       },
+//     }
+//   );
+
+//   return {
+//     success: true,
+//     image: data.image,
+//     title: data.title,
+//     description: data.description,
+//     price: Number(data.price),
+//   };
+
+
+// }
+
+
 export async function updateMerch(formData: FormData): Promise<merchActionState> {
   const user = await getAuthUser();
   if (!user) return redirect("/");
@@ -103,12 +161,28 @@ export async function updateMerch(formData: FormData): Promise<merchActionState>
   }
 
   const data = validated.data;
-
   const merchCollection = await getCollection("merchandise");
 
   if (!merchCollection || !raw.id || raw.id.length !== 24) {
     return {
       errors: { id: ["Invalid ID"] },
+      success: false,
+    };
+  }
+
+  // Check if the user owns the merch item
+  const existingMerch = await merchCollection.findOne({ _id: new ObjectId(raw.id) });
+
+  if (!existingMerch) {
+    return {
+      errors: { id: ["Merchandise not found"] },
+      success: false,
+    };
+  }
+
+  if (existingMerch.userId?.toString() !== user.userId) {
+    return {
+      errors: { id: ["You are not authorized to update this item"] },
       success: false,
     };
   }
@@ -132,9 +206,10 @@ export async function updateMerch(formData: FormData): Promise<merchActionState>
     description: data.description,
     price: Number(data.price),
   };
-
-
 }
+
+
+//delete part server
 
 export async function deleteMerch(formData: FormData): Promise<void> {
   const user = await getAuthUser();
@@ -151,10 +226,14 @@ export async function deleteMerch(formData: FormData): Promise<void> {
   }
 
 
-  const handleDelete=async ()=> {
-    const confirmed=window.confirm("do you want to delete?");
-    if (!confirmed) return;
-  }
+
+
+
+
+  // const handleDelete=async ()=> {
+  //   const confirmed=window.confirm("do you want to delete?");
+  //   if (!confirmed) return;
+  // }
   const deleteResult = await merchCollection.deleteOne({ _id: new ObjectId(id) });
 
   if (deleteResult.deletedCount === 0) {

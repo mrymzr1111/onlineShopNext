@@ -1,336 +1,206 @@
-<!-- # 🛒 E-Commerce App with Secure Authentication
-
-A full-stack modern online shopping app built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.  
-Includes **JWT-based user authentication**, dynamic **product listings with filters & pagination**, and an **admin dashboard** powered by mock data.
-
-> ✅ Perfect for learning secure login systems, frontend/backend integration, and clean project architecture.
-
----
-
-## 📦 Features
-
-- 🔐 **Secure JWT authentication** using HttpOnly cookies
-- 🧾 **Product listings** with filtering and pagination
-- 🧑‍💼 **Admin dashboard** for managing mock inventory
-- 💨 Responsive UI built with **Tailwind CSS**
-- ⚡ Powered by **Next.js App Router** and **TypeScript**
-
----
-
-## 🧠 Authentication Flow
-
-This app implements secure session-based JWT authentication:
-
-1. User submits login/register form
-2. Input is validated with **Zod**
-3. Password is hashed using **bcrypt**
-4. On success:
-   - A JWT is generated using `jose`
-   - The token is stored in an **HttpOnly cookie**
-5. Protected routes verify the JWT token from cookies
-
-✅ Secure by design:
-- Token is inaccessible via JavaScript
-- Sessions persist across reloads
-- Only authenticated users access protected routes (e.g., `/dashboard`)
-
----
-
-## 🗂️ Project Structure
-
-src/
-├── app/ # App Router pages (login, register, dashboard)
-│ └── api/ # API routes (login, register, session)
-├── action/ # Server actions (e.g., register user)
-├── lib/ # Utilities (session, DB, validation)
-├── database/ # Mock data (products, discounts)
-
-yaml
-Copy
-Edit
-
----
-
-## 📁 `lib/` Folder Details
-
-- **`db.ts`** – Connects to MongoDB using the native driver  
-- **`session.ts`** – Handles JWT creation/verification using `jose`  
-- **`rules.ts`** – Zod schemas for validating email, password, etc.
-
----
-
-## 🧪 Demo Credentials
-
-Use these to test the login system:
-
-Email: maryamzarei@gmail.com
-Password: P@ssw0rd
-
-yaml
-Copy
-Edit
-
-✅ In production:
-- Passwords are hashed with `bcrypt`
-- Session tokens are validated server-side on every request
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-2. Install dependencies
-bash
-Copy
-Edit
-npm install
-3. Set environment variables
-Create a .env.local file in the root:
-
-ini
-Copy
-Edit
-MONGODB_URI=your-mongodb-uri
-SESSION_SECRET=your-secret-key
-4. Start mock product API
-bash
-Copy
-Edit
-npx json-server --watch src/database/db.json --port 8000
-5. Start the development server
-bash
-Copy
-Edit
-npm run dev
-🛠 Tech Stack
-Area	Tech Used
-Frontend	Next.js (App Router), React, TypeScript
-Styling	Tailwind CSS
-Auth	bcrypt, jose, JWT, HttpOnly cookies
-Validation	Zod
-Database	MongoDB (native driver)
-Mock API	JSON Server (for development only)
-
-🔧 In Progress
-🛒 Shopping cart & checkout
-
-📧 Email verification and password reset
-
-🔐 Role-based admin access
-
-🎟️ Discount code support from mock JSON:
-
-json
-Copy
-Edit
-"discount": [
-  { "id": "2", "code": "FF20", "percentage": 20 },
-  { "id": "3", "code": "FF15", "percentage": 15 },
-  { "id": "4", "code": "FF10", "percentage": 10 },
-  { "id": "5", "code": "FF05", "percentage": 5 }
-]
-🧾 Order history for users
-
-🙋‍♀️ Author
-Built with ❤️ by Maryam Zarei
-
-GitHub: https://github.com/mrymzr1111
-
-./assest/screenshot(14).png
-./assest/screenshot(15).png
-./assest/screenshot(16).png
-./assest/screenshot(16).png
-./assest/screenshot(17).png
-./assest/screenshot(18).png
-./assest/screenshot(19).png
-./assest/screenshot(20).png
-./assest/screenshot(21).png
-./assest/screenshot(22).png -->
-
-🛒 E-Commerce App with Secure Authentication
-
-A modern online shopping app built with Next.js (App Router), TypeScript, and Tailwind CSS. Includes JWT-based user authentication, dynamic product listings with filters & pagination, and an admin dashboard powered by mock data.
 
 
-📦 Features
-🔐 Authentication
+🛒 Next.js E-Commerce Platform
+A fully responsive, secure e-commerce application built with Next.js, TypeScript, Tailwind CSS, and JOSE for JWT authentication. This platform features a dynamic product listing, admin dashboard, cart functionality, pagination, and protected routes with a mobile-first UX approach.
 
-    Secure JWT authentication using HttpOnly cookies
+🚀 Features
+🔐 Authentication & Security
+JWT Authentication with HttpOnly Cookies using jose
 
-    User login, logout, and registration with full validation
+Secure Login, Logout & Register
 
-    Inputs validated on client and server using Zod
+Middleware-protected routes for users and admins
 
-    Passwords securely hashed with bcrypt
+Session persistence using tokens
 
-    Sessions handled via JWT stored in HttpOnly cookies
+Redirect logic for protected/public pages
 
-    Protected routes verify user authentication for secure access
+🛍️ E-Commerce Functionality
+Fully dynamic product listing
 
-🧾 Product Listings
+Shopping Cart (add/remove items)
 
-    Product listings with filtering and pagination
+Pagination for products
+
+Product Search functionality
+
+Apply discounts (admin controlled)
 
 🧑‍💼 Admin Dashboard
+Full CRUD operations for products
 
-    Admin dashboard for managing mock inventory
+Add/Edit/Delete merchandise
 
-💨 UI & Tech
+Dynamic route protection
 
-    Responsive UI built with Tailwind CSS
-
-    Powered by Next.js App Router and TypeScript
-
-🔐 Authentication Flow
-
-This app implements secure session-based JWT authentication:
-
-    User submits login/register form
-
-    Input is validated with Zod
-
-    Password is hashed using bcrypt
-
-    On success:
-
-        A JWT is generated using jose
-
-        The token is stored in an HttpOnly cookie
-
-    Protected routes verify the JWT token from cookies
-
-✅ Secure by Design
-
-    Token is inaccessible via JavaScript
-
-    Sessions persist across reloads
-
-    Only authenticated users can access protected pages (like /dashboard)
-
-🗂️ Project Structure
-
-src/
-├── app/                   # App Router pages (login, register, dashboard)
-│   └── api/               # API routes (login, register, session)
-├── action/                # Server actions (e.g., register user)
-├── lib/                   # Utilities (session, DB, validation)
-├── database/              # Mock data (products, discounts)
-
-📁 lib/ Folder Details
-
-    db.ts – Connects to MongoDB using the native driver
-
-    session.ts – Handles JWT creation/verification using jose
-
-    rules.ts – Zod schemas for validating email, password, etc.
-
-🧪 Demo Credentials
+Admin-only pages (e.g., /admin/mainpanel, /admin/addmerch, etc.)
+-----------------------------------------------------------------------------------------------------------
+✅ Form Validation
+Zod schema validation on all forms (register, login, product forms)
 
 Use these to test the login system:
 
     Email: maryamzarei@gmail.com
 
     Password: P@ssw0rd
+    ------------------------------------------------------------------------------------------------------
+🎨 UI/UX & Styling
+Fully responsive, mobile-first design
 
-✅ In Production
+Tailwind CSS 3+
 
-    Passwords are securely hashed with bcrypt
+Framer Motion animations
 
-    Session tokens are validated server-side using JWT + HttpOnly cookies
+React Icons and Lucide icons
 
-🚀 Getting Started
+Glassmorphic and gradient styling
 
-    Clone the repository
+Accessible forms and focus states
 
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+🧱 Tech Stack
+Tech	Purpose
+Next.js 15+	React framework with App Router
+TypeScript	Static typing
+Tailwind CSS	Styling and layout
+Zod	Form validation
+JOSE	Secure JWT encoding/decoding
+MongoDB	Database
+Axios	HTTP requests
+Framer Motion	Animation
+React Hot Toast	Feedback messages
+React Icons	Iconography
 
-    Install dependencies
+📁 Project Structure
+bash
+Copy
+Edit
+/app
+  /auth         # Login, Register Pages
+  /admin        # Admin Dashboard, Add/Edit Product
+  /(store)      # Main E-commerce store
+  /utils        # Utility functions (toast, auth)
+  /lib          # Server-side logic (getAuthUser)
+  /middleware.ts# Protect routes via JWT check
+/action         # Server Actions (Login, Register, CRUD)
+🔐 Route Protection
+ts
+Copy
+Edit
+const protectedRoutes = ["/admin/mainpanel", "/admin/addmerch"];
+const publicRoutes = ["/auth/signin", "/auth/register"];
 
+const user = await getAuthUser();
+
+if (protectedRoutes.includes(path) && !user?.userId) {
+  return NextResponse.redirect(new URL("/auth/signin", req.nextUrl));
+}
+
+if (publicRoutes.includes(path) && user?.userId) {
+  return NextResponse.redirect(new URL("/admin/mainpanel", req.nextUrl));
+}
+🛠 Installation & Setup
+Clone the repository
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/your-project-name.git
+cd your-project-name
+Install dependencies
+
+bash
+Copy
+Edit
 npm install
+Add environment variables
 
-    Create environment variables
-    Create a .env.local file in the root directory:
+Create a .env.local file with:
 
-MONGODB_URI=your-mongodb-uri
-SESSION_SECRET=your-secret-key
+env
+Copy
+Edit
+DATABASE_URL=your_mongo_connection
+JWT_SECRET=your_super_secret_key
+Run the dev server
 
-    Start mock product API
-
-npx json-server --watch src/database/db.json --port 8000
-
-    Run the development server
-
+bash
+Copy
+Edit
 npm run dev
+Visit: http://localhost:3000
 
-🛠 Tech Stack
-Area	Tech Used
-Frontend	Next.js (App Router), React, TypeScript
-Styling	Tailwind CSS
-Auth	bcrypt, jose, JWT, HttpOnly cookies
-Validation	Zod
-Database	MongoDB (native driver)
-Mock API	JSON Server (for development only)
-🔧 Features in Progress
+✅ Scripts
+json
+Copy
+Edit
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "type-check": "tsc --noEmit"
+}
+📦 Key Dependencies
+json
+Copy
+Edit
+"next": "^15.3.1",
+"react": "^19.0.0",
+"tailwindcss": "^4.1.11",
+"zod": "^3.25.17",
+"jose": "^6.0.11",
+"axios": "^1.9.0",
+"react-hot-toast": "^2.5.2",
+"lucide-react": "^0.534.0",
+"framer-motion": "^12.18.1"
+📸 UI Preview
+(Add these screenshots in /public/screenshots)
 
-    checkout
+Login / Register Pages
 
-    
+Product Grid
+
+Admin Panel
+
+Mobile & Desktop views
+
+🔒 Authentication Flow
+User logs in → LogIn action generates JWT → stored in HttpOnly cookie.
+
+Middleware checks token on every protected page.
+
+Admin-only routes are fully restricted.
+
+.........................................................................................................
+#####
+**🛍️ Storefront (User Side)**
+Products are fetched from a local JSON data file (data.json)
+
+Supports:
+
+Add to Cart
+
+Remove from Cart
+
+Product Search
+
+Pagination
+
+🧑‍💼 Admin Dashboard
+Product data is stored and managed via MongoDB
+
+Full CRUD functionality:
+
+Add New Product
+
+Edit Existing Product
+
+Delete Product
+
+All admin routes are JWT-protected using HttpOnly cookies
 
 
-    Discount code support (via mock JSON):
-
-"discount": [
-  { "id": "2", "code": "FF20", "percentage": 20 },
-  { "id": "3", "code": "FF15", "percentage": 15 },
-  { "id": "4", "code": "FF10", "percentage": 10 },
-  { "id": "5", "code": "FF05", "percentage": 5 }
-]
-
-    Order history for users
-
-📸 Screenshots
-
-Available in the assets folder:
-
-    ./assest/screenshot(14).png
-
-    ./assest/screenshot(15).png
-
-    ./assest/screenshot(16).png
-
-    ./assest/screenshot(17).png
-
-    ./assest/screenshot(18).png
-
-    ./assest/screenshot(19).png
-
-    ./assest/screenshot(20).png
-
-    ./assest/screenshot(21).png
-
-    ./assest/screenshot(22).png
-
-UI walkthrough of login, dashboard, product pages, and more:
-Login & Register | Dashboard | Product List
-🙋‍♀️ Author
-
-Built with ❤️ by Maryam Zarei
-
-    GitHub: https://github.com/mrymzr1111
-
-⚠️ Note
- 
-Admin Fetures :
-
--product managment : Add, update,and delete products
--Authentication:Login, logout , and registeration
--Partial produt display connected to MongoDB
-
-some parts of the app use MongoDB as the database ,while others rely on  mock JSON data.
-
-**IM IN THE PROCESS OF MIGRATING DATA MANAGEMENT TO  MongoDB FOR FULL DATABASE ***
+📄 License
+MIT © 2025
+Developed by Maryam Zarei
 

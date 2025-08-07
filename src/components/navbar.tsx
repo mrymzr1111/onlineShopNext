@@ -175,7 +175,8 @@ export default function Navbar({ authUser }: NavbarProps) {
             <div className="flex items-center space-x-4">
               <Link
                 href="/admin/mainpanel"
-                className="text-gray-700 hover:text-cyan-700 font-medium transition"
+                className="text-gray-700 hover:tex
+                t-cyan-700 font-medium transition"
               >
                 Dashboard
               </Link>
