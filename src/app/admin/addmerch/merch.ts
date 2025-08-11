@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 import { getCollection } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { merchSchema } from "@/lib/rules";
-import { use } from "react";
+
 import { revalidatePath } from "next/cache";
 import getAuthUser from "@/lib/getAuthUser";
 
@@ -28,7 +28,7 @@ export type merchActionState = {
 
 // Server Action
 export async function createMerch(
-  state: merchActionState = {},
+  _state: merchActionState = {},
   formData: FormData
 ): Promise<merchActionState> {
   const user = await getAuthUser();
@@ -79,64 +79,6 @@ export async function createMerch(
 }
 
 
-//update 
-
-// export async function updateMerch(formData: FormData): Promise<merchActionState> {
-//   const user = await getAuthUser();
-//   if (!user) return redirect("/");
-
-//   const raw = {
-//     id: formData.get("id")?.toString() ?? "",
-//     image: formData.get("image")?.toString() ?? "",
-//     title: formData.get("title")?.toString() ?? "",
-//     description: formData.get("description")?.toString() ?? "",
-//     price: formData.get("price")?.toString() ?? "",
-//   };
-
-//   const validated = merchSchema.safeParse(raw);
-
-//   if (!validated.success) {
-//     return {
-//       errors: validated.error.flatten().fieldErrors,
-//       success: false,
-//     };
-//   }
-
-//   const data = validated.data;
-
-//   const merchCollection = await getCollection("merchandise");
-
-//   if (!merchCollection || !raw.id || raw.id.length !== 24) {
-//     return {
-//       errors: { id: ["Invalid ID"] },
-//       success: false,
-//     };
-//   }
-//   //check the user owns the 
-
-
-//   await merchCollection.updateOne(
-//     { _id: new ObjectId(raw.id) },
-//     {
-//       $set: {
-//         image: data.image,
-//         title: data.title,
-//         description: data.description,
-//         price: Number(data.price),
-//       },
-//     }
-//   );
-
-//   return {
-//     success: true,
-//     image: data.image,
-//     title: data.title,
-//     description: data.description,
-//     price: Number(data.price),
-//   };
-
-
-// }
 
 
 export async function updateMerch(formData: FormData): Promise<merchActionState> {

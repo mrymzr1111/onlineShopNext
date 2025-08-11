@@ -6,22 +6,13 @@ import { getCollection } from "@/lib/db";
 import { ObjectId } from "mongodb";
 // import { updateMerch } from "../../addmerch/merch";
 import { MerchandiseType } from "@/components/merchForm";
-import { merchActionState, updateMerch } from "../../addmerch/merch";
-import BackButton from "@/components/backbutton";
+import {  updateMerch } from "../../addmerch/merch";
 
 
-
-
-// type IParams = {
-//   params: {
-
-// type Params = {
-//   params: Promise<{ id: string }>;
-// };
 
 // export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
 export default async function Page({ params }: { params: { id: string } }) {
-  const {id}  =  await params;
+  const {id}  = await params;
   // if id might be a Promise, await it:
   // const id = typeof params.id === 'string' ? params.id : await params.id;
   //connects to the merchandise collection in MongoDB database

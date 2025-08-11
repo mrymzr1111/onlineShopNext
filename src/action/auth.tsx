@@ -20,7 +20,7 @@ export type RegisterActionState = {
 
 //AUTH REGIS5ER
 export async function register(
-  state: RegisterActionState = {},
+  _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
   const validatedFields = RegisterFormSchema.safeParse({
@@ -70,7 +70,7 @@ export async function register(
 
 // login auth
 export async function LogIn(
-  state: RegisterActionState = {},
+  _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
   const validatedFields = loginFormSchema.safeParse({

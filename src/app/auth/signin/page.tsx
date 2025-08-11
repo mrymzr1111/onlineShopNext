@@ -119,7 +119,7 @@ import {  LogIn, RegisterActionState } from "@/action/auth";
 import { showError, showSuccess } from "@/app/utils/toast";
 
 
-export default function loginPage() {
+export default function LoginPage() {
   // useActionState lets the form call a Server Action (register)
   const [state, formAction, isPending] = useActionState<RegisterActionState, FormData>(LogIn, {});
   const router = useRouter();
