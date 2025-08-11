@@ -1,10 +1,14 @@
 
 
 import MerchCard from "@/components/merchCard";
-import { getCollection } from "@/lib/db";
+import { getCollection ,Merchandise} from "@/lib/db";
+
+
+
+
 
 export default async function Home() {
-  const merchCollection = await getCollection("merchandise");
+  const merchCollection = await getCollection<Merchandise>("merchandise");
   const merchandise = await merchCollection?.find().toArray();
 
   if (!merchandise) {
@@ -22,8 +26,8 @@ export default async function Home() {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
         style={{ gridAutoRows: "1fr" }} // make all rows equal height
       >
-        {limitedMerchandise.map((merch: any) => (
-          <MerchCard key={merch._id} merch={merch} />
+        {limitedMerchandise.map((merch) => (
+          <MerchCard key={merch._id.toString()} merch={merch} />
         ))}
       </div>
     </div>

@@ -19,6 +19,7 @@ export type RegisterActionState = {
 
 
 //AUTH REGIS5ER
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function register(
   _state: RegisterActionState = {},
   formData: FormData

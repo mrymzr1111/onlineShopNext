@@ -4,12 +4,25 @@
 import { redirect } from "next/navigation";
 
 
-import { getCollection } from "@/lib/db";
+import { getCollection,Merchandise } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { merchSchema } from "@/lib/rules";
 
 import { revalidatePath } from "next/cache";
 import getAuthUser from "@/lib/getAuthUser";
+
+
+
+
+export interface NewMerchandise {
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+  userId: ObjectId;
+}
+
+
 
 export type merchActionState = {
   image?: string;
@@ -27,6 +40,7 @@ export type merchActionState = {
 };
 
 // Server Action
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function createMerch(
   _state: merchActionState = {},
   formData: FormData
@@ -51,7 +65,7 @@ export async function createMerch(
   }
 
   try {
-    const merchCollection = await getCollection("merchandise");
+    const merchCollection = await getCollection<Merchandise>("merchandise");
 
     if (!merchCollection) {
       throw new Error("Collection not found.");
@@ -103,7 +117,7 @@ export async function updateMerch(formData: FormData): Promise<merchActionState>
   }
 
   const data = validated.data;
-  const merchCollection = await getCollection("merchandise");
+  const merchCollection = await getCollection<Merchandise>("merchandise");
 
   if (!merchCollection || !raw.id || raw.id.length !== 24) {
     return {
@@ -113,7 +127,7 @@ export async function updateMerch(formData: FormData): Promise<merchActionState>
   }
 
   // Check if the user owns the merch item
-  const existingMerch = await merchCollection.findOne({ _id: new ObjectId(raw.id) });
+  const existingMerch = await merchCollection.findOne({ _id: new ObjectId(raw.id) }) as Merchandise | null;
 
   if (!existingMerch) {
     return {
@@ -198,3 +212,4 @@ export async function deleteMerch(formData: FormData): Promise<void> {
 
 }
  
+

@@ -1,16 +1,39 @@
 
  import "server-only"
+import {  Collection} from "mongodb";
+// import { MongoClient, ServerApiVersion ,ObjectId} from "mongodb";
+import { Document, ObjectId,  MongoClient, ServerApiVersion } from "mongodb";
 
-import { MongoClient, ServerApiVersion } from "mongodb";
+// export interface User extends Document {
+//   _id: string;
+//   email: string;
+//   password: string;
+// }
 
-
-type User = {
-  _id: string;
+// export interface Merchandise extends Document {
+//   _id: string;
+//   name: string;
+//   price: number;
+// }
+export interface User extends Document {
+  _id: ObjectId;
   email: string;
   password: string;
-  // add any other user fields you store
-};
+}
 
+export interface Merchandise  extends Document{
+  // _id: ObjectId;
+  // name: string;
+  // price: number;
+
+
+   _id?: ObjectId;
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+  userId: ObjectId;
+}
 
 if (!process.env.DB_URI) {
   throw new Error("Mongo URI not found!");
@@ -34,19 +57,19 @@ async function getDB(dbName:string) {
   }
 }
 
-export async function getCollection(collectionName:string) {
+export async function getCollection<T extends Document>(collectionName:string): Promise<Collection<T> | null> {
   const db = await getDB("next_blog_db");
-  if (db) return db.collection(collectionName);
+  if (db) return db.collection<T>(collectionName);
 
   return null;
 }
 
 
 export async function findUserByEmail(email: string): Promise<User | null> {
-  const usersCollection = await getCollection("users");
+  const usersCollection = await getCollection<User>("users");
   if (!usersCollection) return null;
 
   const user = await usersCollection.findOne({ email });
-  return user as User | null;
+  return user as User ;
 }
 
