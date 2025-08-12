@@ -40,9 +40,9 @@ export type merchActionState = {
 };
 
 // Server Action
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export async function createMerch(
-  _state: merchActionState = {},
+  // _state: merchActionState = {},
   formData: FormData
 ): Promise<merchActionState> {
   const user = await getAuthUser();

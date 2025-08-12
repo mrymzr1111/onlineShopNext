@@ -21,7 +21,7 @@ export type RegisterActionState = {
 //AUTH REGIS5ER
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function register(
-  _state: RegisterActionState = {},
+  // _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
   const validatedFields = RegisterFormSchema.safeParse({
@@ -71,7 +71,7 @@ export async function register(
 
 // login auth
 export async function LogIn(
-  _state: RegisterActionState = {},
+  // _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
   const validatedFields = loginFormSchema.safeParse({

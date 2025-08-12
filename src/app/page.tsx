@@ -6,7 +6,6 @@ import { getCollection ,Merchandise} from "@/lib/db";
 
 
 
-
 export default async function Home() {
   const merchCollection = await getCollection<Merchandise>("merchandise");
   const merchandise = await merchCollection?.find().toArray();

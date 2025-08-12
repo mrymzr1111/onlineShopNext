@@ -3,10 +3,19 @@
 
 import Link from "next/link";
 
-export default function MerchCard({ merch }: { merch: any }) {
+
+type Merch = {
+  _id?: string;      
+  image: string;
+  title: string;
+  description: string;
+  price: string;
+};
+
+export default function MerchCard({ merch }: { merch: Merch }) {
   return (
     <div className="w-full max-w-sm bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
-      <Link href={`/show/${merch._id.toString()}`} className="block">
+      <Link href={`/show/${merch._id?.toString()}`} className="block">
         {/* Image */}
         <div className="relative w-full aspect-[4/5] bg-gray-100">
           <img
