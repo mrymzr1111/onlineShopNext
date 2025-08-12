@@ -61,7 +61,7 @@ function Counter({id}:IAddToCartProps) {
 <button
   onClick={() => deleteFromCart((id))}
   className="bg-rose-500 hover:bg-red-600 text-white w-11 h-11 rounded-full shadow-lg transition-transform transform hover:scale-110 hover:rotate-6 flex items-center justify-center border border-red-700"
-  title="حذف از سبد خرید"
+  title="delete from shopping cart"
 >
   <HiOutlineTrash className="w-6 h-6" />
 </button>

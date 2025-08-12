@@ -8,10 +8,14 @@ import { ObjectId } from "mongodb";
 import { MerchandiseType } from "@/components/merchForm";
 import {  updateMerch } from "../../addmerch/merch";
 
-
+interface PageProps {
+  params: {
+    id: string; // ✅ always string from URL
+  };
+}
 
 // export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }:PageProps) {
   const {id}  = params;
   // if id might be a Promise, await it:
   // const id = typeof params.id === 'string' ? params.id : await params.id;
