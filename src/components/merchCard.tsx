@@ -1,15 +1,16 @@
 
 
 
+import { ObjectId } from "mongodb";
 import Link from "next/link";
 
 
 type Merch = {
-  _id?: string;      
+  _id?: string| ObjectId; 
   image: string;
   title: string;
   description: string;
-  price: string;
+  price: number | string;
 };
 
 export default function MerchCard({ merch }: { merch: Merch }) {

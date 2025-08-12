@@ -12,7 +12,7 @@ import {  updateMerch } from "../../addmerch/merch";
 
 // export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
 export default async function Page({ params }: { params: { id: string } }) {
-  const {id}  = await params;
+  const {id}  = params;
   // if id might be a Promise, await it:
   // const id = typeof params.id === 'string' ? params.id : await params.id;
   //connects to the merchandise collection in MongoDB database
