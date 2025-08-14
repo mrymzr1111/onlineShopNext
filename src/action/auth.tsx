@@ -24,6 +24,7 @@ export async function register(
   _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
+   void _state;
   const validatedFields = RegisterFormSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
@@ -74,6 +75,7 @@ export async function LogIn(
   _state: RegisterActionState = {},
   formData: FormData
 ): Promise<RegisterActionState> {
+   void _state;
   const validatedFields = loginFormSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
