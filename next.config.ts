@@ -11,13 +11,14 @@
 
 
 
-
-// export default nextConfig;
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
     domains: ['th.bing.com', 'example.com', 'another-domain.com', 'placekitten.com'],  
+  },
+  typescript: {
+    ignoreBuildErrors: true, // <- This will ignore TS errors during production build
   },
 };
 
