@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:ignore-ts": "next build --ignore-ts-errors",
+  
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit"

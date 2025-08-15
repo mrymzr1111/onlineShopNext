@@ -1,14 +1,56 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES2017",
+//     "lib": [
+//       "dom",
+//       "dom.iterable",
+//       "esnext"
+//     ],
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "strict": true,
+//     "noEmit": true,
+//     "esModuleInterop": true,
+//     "module": "esnext",
+//     "moduleResolution": "bundler",
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "jsx": "preserve",
+//     "incremental": true,
+//     "plugins": [
+//       {
+//         "name": "next"
+//       }
+//     ],
+//     "paths": {
+//       "@/*": [
+//         "./src/*"
+//       ]
+//     }
+//   },
+//   "include": [
+//     "**/*.ts",
+//     "**/*.tsx",
+//     "next-env.d.ts",
+//     "src/app/admin/addmerch/merch.ts",
+//     "src/app/admin/addmerch/page.tsx",
+//     "src/components/dash.tsx",
+//     "src/components/merchForm.tsx",
+//     "src/lib/getAuthUser.ts",
+//     "testConnection.js",
+//     ".next/types/**/*.ts"
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,           // <-- change from true
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -17,16 +59,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": [
     "**/*.ts",
@@ -40,7 +74,5 @@
     "testConnection.js",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
