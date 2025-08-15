@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,9 +23,24 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "testConnection.js", "src/components/merchForm.tsx", "src/app/admin/addmerch/merch.ts", "src/app/admin/addmerch/page.tsx", "src/components/dash.tsx", "src/lib/getAuthUser.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "src/app/admin/addmerch/merch.ts",
+    "src/app/admin/addmerch/page.tsx",
+    "src/components/dash.tsx",
+    "src/components/merchForm.tsx",
+    "src/lib/getAuthUser.ts",
+    "testConnection.js",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

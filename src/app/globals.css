@@ -25,3 +25,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* globals.css */
+html {
+  font-family: "Geist Sans", sans-serif;
+}
+
+code, pre {
+  font-family: "Geist Mono", monospace;
+}

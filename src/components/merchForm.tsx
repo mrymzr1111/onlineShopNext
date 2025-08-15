@@ -43,7 +43,7 @@ export default function MerchForm({ merchandise = null, handler }: Props) {
       if (handler) {
         return await handler(formData);
       }
-      return await createMerch(undefined, formData);
+      return await createMerch(formData);// removed undefined from here
     },
     initialState
   );

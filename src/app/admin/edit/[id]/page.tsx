@@ -1,85 +1,64 @@
 
 
 
-// import MerchForm from "@/components/merchForm";
-// import { getCollection } from "@/lib/db";
-// import { ObjectId } from "mongodb";
-// // import { updateMerch } from "../../addmerch/merch";
-// import { MerchandiseType } from "@/components/merchForm";
-// import {  updateMerch } from "../../addmerch/merch";
-
-// // type PageProps = {
-// //   params: { id: string | Promise<string> };
-// //   searchParams?: Record<string, string | string[] | undefined>;
-// // };
-
-
-
-
-// // // export default async function Page({ params }: { params: { id: string | Promise<string> } }) {
-// // export default async function Page({ params }: PageProps) {
-// //   // const {id}  = params;
-// //     const id = typeof params.id === "string" ? params.id : await params.id;
-
-
-// export default async function Page(props: any) {
-//   const params = props.params as { id: string | Promise<string> };
-//   const id = typeof params.id === "string" ? params.id : await params.id;
-
-//   // rest of your code...
-// }
-
-
-
-
-
-
-//     // console.log("Params:", params);
-//   // if id might be a Promise, await it:
-//   // const id = typeof params.id === 'string' ? params.id : await params.id;
-//   //connects to the merchandise collection in MongoDB database
-//   const merchCollection = await getCollection("merchandise");
-
-//   let merchandise: MerchandiseType | null = null;
-
-//   if (id.length === 24 && merchCollection) {
-//     // specific document finds (item with ID jjj) that you want to edit
-//     //query the db based on the id
-//     const data = await merchCollection.findOne({ _id: new ObjectId(id) });
-//     if (data) {
-//       merchandise = {
-//         _id: data._id.toString(),
-//         image: data.image,
-//         title: data.title,
-//         description: data.description,
-//         price: data.price,
-//       };
-//     }
-//   }
-
-
-
-//   return (
-//     <div className="w-full">
-
- 
-     
-//            <MerchForm  handler={updateMerch} merchandise={merchandise} />
- 
-
- 
-//     </div>
-//   );
-// }
-
-// import MerchForm from "@/components/merchForm";
-// import { getCollection } from "@/lib/db";
-// import { ObjectId } from "mongodb";
-// import { MerchandiseType } from "@/components/merchForm";
+import MerchForm from "@/components/merchForm";
+import { getCollection } from "@/lib/db";
+import { ObjectId } from "mongodb";
 // import { updateMerch } from "../../addmerch/merch";
-// type PageProps = {
-//   params: { id: string };
-// };
+import { MerchandiseType } from "@/components/merchForm";
+import {  updateMerch } from "../../addmerch/merch";
+
+
+
+interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams?: Record<string, string | string[] | undefined>;
+}
+
+
+
+
+export default async function Page({ params }: PageProps) {
+
+  // const id = params.id;
+
+  // const merchCollection = await getCollection("merchandise");
+
+  // let merchandise: MerchandiseType | null = null;
+
+  const id = params.id;
+  const merchCollection = await getCollection("merchandise");
+  let merchandise: MerchandiseType | null = null;
+
+
+  if (id.length === 24 && merchCollection) {
+    const data = await merchCollection.findOne({ _id: new ObjectId(id) });
+    if (data) {
+      merchandise = {
+        _id: data._id.toString(),
+        image: data.image,
+        title: data.title,
+        description: data.description,
+        price: data.price,
+      };
+    }
+  }
+
+  return (
+    <div className="w-full">
+      <MerchForm handler={updateMerch} merchandise={merchandise} />
+    </div>
+  );
+}
+
+// interface PageProps {
+//   params: {
+//     id: string;
+//   };
+//   searchParams?: { [key: string]: string | string[] | undefined };
+// }
 
 
 // export default async function Page({ params }: PageProps) {
@@ -111,35 +90,74 @@
 
 
 
-import MerchForm from "@/components/merchForm";
-import { getCollection } from "@/lib/db";
-import { ObjectId } from "mongodb";
-import { MerchandiseType } from "@/components/merchForm";
-import { updateMerch } from "../../addmerch/merch";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const id = params.id;
 
-  const merchCollection = await getCollection("merchandise");
+// interface MerchandiseType {
+//   _id: string;
+//   image: string;
+//   title: string;
+//   description: string;
+//   price: number;
+// }
 
-  let merchandise: MerchandiseType | null = null;
+// interface merchActionState {
+//   success: boolean;
+//   message?: string;
+// }
 
-  if (id.length === 24 && merchCollection) {
-    const data = await merchCollection.findOne({ _id: new ObjectId(id) });
-    if (data) {
-      merchandise = {
-        _id: data._id.toString(),
-        image: data.image,
-        title: data.title,
-        description: data.description,
-        price: data.price,
-      };
-    }
-  }
+// interface PageProps {
+//   params: { id: string };
+//   searchParams?: { [key: string]: string | string[] | undefined };
+// }
 
-  return (
-    <div className="w-full">
-      <MerchForm handler={updateMerch} merchandise={merchandise} />
-    </div>
-  );
-}
+// export default async function Page({ params }: PageProps) {
+//   const id = params.id;
+//   const merchCollection = await getCollection("merchandise");
+
+//   let merchandise: MerchandiseType | null = null;
+
+//   if (id.length === 24 && merchCollection) {
+//     const data = await merchCollection.findOne({ _id: new ObjectId(id) });
+//     if (data) {
+//       merchandise = {
+//         _id: data._id.toString(),
+//         image: data.image,
+//         title: data.title,
+//         description: data.description,
+//         price: data.price,
+//       };
+//     }
+//   }
+
+//   // Convert FormData to MerchandiseType inside the handler
+//   const updateMerch = async (formData: FormData): Promise<merchActionState> => {
+//     try {
+//       const updated: MerchandiseType = {
+//         _id: formData.get("_id") as string,
+//         image: formData.get("image") as string,
+//         title: formData.get("title") as string,
+//         description: formData.get("description") as string,
+//         price: Number(formData.get("price")),
+//       };
+
+//       // Perform DB update logic here
+//       if (merchCollection) {
+//         await merchCollection.updateOne(
+//           { _id: new ObjectId(updated._id) },
+//           { $set: { ...updated } }
+//         );
+//       }
+
+//       return { success: true };
+//     } catch (error) {
+//       console.error(error);
+//       return { success: false, message: "Failed to update merchandise" };
+//     }
+//   };
+
+//   return (
+//     <div className="w-full">
+//       <MerchForm handler={updateMerch} merchandise={merchandise ?? undefined} />
+//     </div>
+//   );
+// }
